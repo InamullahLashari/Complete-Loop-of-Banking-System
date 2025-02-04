@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ATM Activation Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .message {
+            color: green;
+            font-size: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Success Message (Only displayed if 'message' exists) -->
+    <h1 th:if="${message}" th:text="${message}" class="message"></h1>
+
+    <!-- Display error message if available -->
+    <h1 th:if="${errorMessage}" th:text="${errorMessage}" class="error"></h1>
+
+    <!-- Display user details if available -->
+    <h2>welcome inam</h2> 
+
+</body>
+</html>

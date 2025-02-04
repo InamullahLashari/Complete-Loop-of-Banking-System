@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Updated Balance</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Updated Balance</h1>
+    <p id="balance"></p>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const balance = urlParams.get('balance');
+
+        if (balance) {
+            document.getElementById('balance').textContent = `Balance: $${balance}`;
+        } else {
+            document.getElementById('balance').textContent = 'No balance information available.';
+        }
+    </script>
+</body>
+</html>

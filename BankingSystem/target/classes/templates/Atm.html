@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ATM PIN Entry</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/atm.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="imge">
+            <img src="/images/eagle.png" alt="Eagle Icon">
+        </div>
+        <h2 class="icon-title">ICONIC BANK</h2>
+    </div>
+
+    <div class="form-container">
+        <h2 class="text-center">enter the account number</h2>
+
+        <!-- PIN Entry Form -->
+        <form th:action="@{/pinentry}" th:object="${user}" method="post">
+					
+            <!-- PIN Field -->
+            <div class="form-group">
+                <label for="accountNum">Enter accountNum:</label>
+                <input type="password" class="form-control" id="accountNum" th:field="*{accountNum}" required />
+			
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </div>
+
+    <br><br>
+    <a th:href="@{/home}" class="btn" style="font-weight: 10px;">HOME</a>
+</body>
+
+</html>

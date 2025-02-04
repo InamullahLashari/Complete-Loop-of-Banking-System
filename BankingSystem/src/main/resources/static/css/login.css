@@ -1,0 +1,86 @@
+/* Global Styling */
+body {
+    background-color: black;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header Section */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+	margin-right: 20%;
+	
+}
+
+.imge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+.imge img {
+    width: 60px;
+    height: 60px;
+}
+
+.icon-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-left: 15px;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: rgb(128, 128, 128);
+    padding: 30px;
+	height: 400px;
+    width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgb(255, 255, 255);
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 10px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.6);
+}
+
+.btn-primary {
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1c5f8c;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}

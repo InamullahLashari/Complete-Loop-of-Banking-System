@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - ICONIC BANK</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/logined.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-container">
+            <div class="imge">
+                <img src="/images/eagle.png" alt="Eagle Icon">
+            </div>
+            <h2 class="icon-title">ICONIC BANK</h2>
+        </div>
+
+        <div class="card bank-note">
+            <div class="card-body">
+                <h1>User: <span th:text="${name}"></span></h1>
+                <h2>Account No: <span th:text="${account}"></span></h2>
+                <h3>Current Balance: <span th:text="${balance}"></span></h3>
+                <a th:href="@{/logout}" class="btn btn-danger logout-btn">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

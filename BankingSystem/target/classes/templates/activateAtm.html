@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Activate ATLm Card</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div th:if="${errorMessage}" class="alert alert-danger text-center">
+        <h3 th:text="${errorMessage}"></h3>
+    </div>
+
+    <div class="header-container">
+        <div class="imge">
+            <img src="/images/eagle.png" alt="Eagle Icon">
+        </div>
+        <h2 class="icon-title">ICONIC BANK</h2>
+    </div>
+
+    <div class="form-container">
+        <h2 class="text-center">Activate Your ATLm Card</h2>
+
+        <!-- Activation Form -->
+        <form th:action="@{/activate-card}" th:object="${user}" method="post">
+            
+            <!-- Account Number Field -->
+            <div class="form-group">
+                <label for="accountNumber">Account Number:</label>
+                <input type="text" class="form-control" id="accountNumber" th:field="*{accountNumber}" required />
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" required />
+            </div>
+
+            <!-- Generate PIN Field -->
+            <div class="form-group">
+                <label for="pin">Generated PIN:</label>
+                <input type="text" class="form-control" id="pin" th:field="*{pin}" th:value="${generatedPin}" disabled />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Activate</button>
+        </form>
+
+    </div>
+
+    <br><br>
+    <a th:href="@{/home}" class="btn" style="font-weight: 10px;">HOME</a>
+
+    <!-- Optional Script for PIN Generation -->
+    <script>
+        // Script to generate a random 4-digit PIN
+        function generatePin() {
+            let pin = Math.floor(1000 + Math.random() * 9000); // Generates a 4-digit number
+            document.getElementById('pin').value = pin;
+        }
+
+        // Call generatePin when the page loads
+        window.onload = generatePin;
+    </script>
+</body>
+
+</html>

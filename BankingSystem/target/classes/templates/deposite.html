@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Deposit Form</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Deposit Money</h1>
+    <form id="depositForm">
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" required><br><br>
+
+        <label for="depositorName">Depositor Name:</label>
+        <input type="text" id="depositorName" name="depositorName" required><br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required><br><br>
+
+        <label for="cnic">Depositor CNIC:</label>
+        <input type="text" id="cnic" name="cnic" required><br><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+
+        <button type="submit">Deposit</button>
+    </form>
+
+    <script>
+        document.getElementById('depositForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = {
+                accountNumber: document.getElementById('accountNumber').value,
+                depositorName: document.getElementById('depositorName').value,
+                amount: parseFloat(document.getElementById('amount').value),
+                cnic: document.getElementById('cnic').value,
+                phoneNumber: document.getElementById('phoneNumber').value
+            };
+
+            fetch('http://localhost:8001/user/account_number', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = `balance.html?balance=${data.balance}`;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

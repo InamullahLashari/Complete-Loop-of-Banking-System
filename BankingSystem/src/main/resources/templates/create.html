@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Success and Error Messages -->
+    <div th:if="${Succmessage}" class="alert alert-success text-center" id="successMessage">
+        <h3 th:text="${Succmessage}"></h3>
+    </div>
+    <div th:if="${Errormessage}" class="alert alert-danger text-center" id="errorMessage">
+        <h3 th:text="${Errormessage}"></h3>
+    </div>
+
+    <div class="header-container">
+        <div class="imge">
+            <img src="/images/eagle.png" alt="Eagle Icon">
+        </div>
+        <h2 class="icon-title">ICONIC BANK</h2>
+    </div>
+
+    <div class="form-container">
+        <h2 class="text-center">Create The ICONIC BANK Account</h2>
+
+        <!-- Registration Form -->
+        <form th:action="@{/created}" th:object="${user}" method="post">
+            <!-- Name Field -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" th:field="*{name}" required />
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" th:field="*{email}" required />
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+                <label for="cnic">CNIC:</label>
+                <input type="number" class="form-control" id="cnic" th:field="*{cnic}" required />
+            </div>
+
+            <!-- Phone Number Field -->
+            <div class="form-group">
+                <label for="phoneno">Phone Number:</label>
+                <input type="tel" class="form-control" id="phoneno" th:field="*{phoneNum}" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        </form>
+		
+		
+    </div>
+	<br><br>
+				   <a th:href="@{/home}"class="btn" style="font-weight: 10px;">HOME</a>
+	
+
+    <!-- JavaScript to hide messages after a few seconds -->
+    <script>
+        // Function to hide the success or error message after a delay
+        function hideMessage(elementId, delay) {
+            const messageElement = document.getElementById(elementId);
+            if (messageElement) {
+                setTimeout(() => {
+                    messageElement.style.display = 'none';
+                }, delay);
+            }
+        }
+
+        // Hide success message after 5 seconds (5000 milliseconds)
+        hideMessage('successMessage', 5000);
+
+        // Hide error message after 5 seconds (5000 milliseconds)
+        hideMessage('errorMessage', 5000);
+    </script>
+</body>
+
+</html>

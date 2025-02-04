@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" th:href="@{/css/atminterface.css}">
+</head>
+<body>
+    <div class="container">
+        <!-- First Column of Buttons -->
+        <div class="button-column">
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/fast-cash\''">1. Fast Cash</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/balance-inquiry\''">2. Balance Inquiry</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/pin-change\''">3. PIN Change</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/payment\''">4. Payment</button>
+        </div>
+
+        <!-- Second Column of Buttons -->
+        <div class="button-column">
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/cash-withdraw\''">1. Cash Withdrawal</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/mini-statement\''">2. Mini Statement</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/fund-transfer\''">3. Fund Transfer</button>
+            <button type="button" class="atm-btn" th:onclick="'window.location.href=\'/other-service\''">4. Other Services</button>
+        </div>
+    </div>
+</body>
+</html>

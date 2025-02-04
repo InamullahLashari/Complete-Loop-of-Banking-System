@@ -1,0 +1,41 @@
+
+	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+	    <meta charset="UTF-8">
+	    <title>User Registration</title>
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    <!-- Custom CSS -->
+	    <link rel="stylesheet" href="/css/logined.css">
+	</head>
+
+	<body>
+		<h1 th:text="${message}"></h1>
+		
+	    <div class="header-container">
+	        <div class="imge">
+	            <img src="/images/eagle.png" alt="Eagle Icon">
+	        </div>
+	        <h2 class="icon-title">ICONIC BANK</h2>
+	    </div>
+
+	       
+
+			  <div class="form">
+			
+
+						   <!-- Display user details -->
+						   <h1>Account Created! now you can Acesss your account by login</h1><br><br>
+						 
+
+			   </div>
+			   <br><br>
+			  
+			   <h1 th:text="${errorMessage}"></h1>
+	    </div>
+		<a th:href="@{/home}"class="btn" style="font-weight: 10px;">HOME</a>
+	</body>
+
+	</html>

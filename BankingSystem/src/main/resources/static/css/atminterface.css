@@ -1,0 +1,48 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the ATM Interface */
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Increased width */
+    max-width: 1200px; /* Increased max-width */
+}
+
+/* Column for Buttons */
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between buttons */
+    width: 48%; /* Adjusted width for columns */
+}
+
+/* ATM Button Styles */
+.atm-btn {
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: none;
+    padding: 20px; /* Increased padding */
+    border-radius: 10px;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width for buttons */
+}
+
+.atm-btn:hover {
+    background-color: rgb(128, 128, 128);
+}
